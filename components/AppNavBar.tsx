@@ -10,13 +10,23 @@ import {
   MenuButton,
   MenuItem,
   MenuList,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import AppNavBarLink from "./AppNavBarLink";
 import AppNavBarLogo from "./AppNavBarLogo";
 
 const AppNavBar = () => {
   return (
-    <Box as="nav" position="fixed" w="100%" px={3} py={5} bgColor="white">
+    <Box
+      as="nav"
+      position="fixed"
+      w="100%"
+      px={3}
+      py={5}
+      bg={useColorModeValue("#ffffff60", "#20202080")}
+      css={{ backdropFilter: "blur(8px)" }}
+      zIndex={10}
+    >
       <Container maxW="container.lg">
         <Flex justify="space-between">
           <AppNavBarLogo />
