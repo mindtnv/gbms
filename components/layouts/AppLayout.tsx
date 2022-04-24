@@ -7,7 +7,7 @@ const AppLayout = ({ children }: { children: ReactElement }) => {
   return (
     <Box as="main">
       <AppNavBar />
-      <Container maxW="container.md" pt={28} px={3} mb={20}>
+      <Container maxW="container.md" pt={28} px={6} mb={20}>
         {children}
       </Container>
       <AppFooter />
