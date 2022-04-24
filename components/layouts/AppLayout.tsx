@@ -5,9 +5,9 @@ import AppNavBar from "../AppNavBar";
 
 const AppLayout = ({ children }: { children: ReactElement }) => {
   return (
-    <Box as="main">
+    <Box as="main" minH="100vh" position="relative">
       <AppNavBar />
-      <Container maxW="container.md" pt={28} px={6} mb={20}>
+      <Container maxW="container.md" pt={28} px={6} pb={36}>
         {children}
       </Container>
       <AppFooter />

@@ -31,7 +31,7 @@ const AppNavBar = () => {
         <Flex justify="space-between">
           <AppNavBarLogo />
           <HStack spacing={7} display={{ base: "none", sm: "flex" }}>
-            <AppNavBarLink href="/works">Проекты</AppNavBarLink>
+            <AppNavBarLink href="/projects">Проекты</AppNavBarLink>
             <AppNavBarLink href="/posts">Посты</AppNavBarLink>
             <AppNavBarLink href="/links">Ссылки</AppNavBarLink>
           </HStack>
@@ -47,7 +47,7 @@ const AppNavBar = () => {
                   <MenuItem>Главная</MenuItem>
                 </AppNavBarLink>
                 <AppNavBarLink
-                  href="/works"
+                  href="/projects"
                   _hover={{ textDecoration: "none" }}
                 >
                   <MenuItem>Проекты</MenuItem>

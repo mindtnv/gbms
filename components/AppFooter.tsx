@@ -10,10 +10,13 @@ const AppFooter = () => {
       bg={useColorModeValue("#ffffff60", "#20202080")}
       css={{ backdropFilter: "blur(8px)" }}
       zIndex={10}
+      bottom={0}
+      position="absolute"
     >
       <Container maxW="container.lg">
         <Text align="center">
-          Made with <strong>Next</strong>/<strong>Chakra UI</strong>
+          Builded by <strong>gbms</strong> with <strong>Next</strong>/
+          <strong>Chakra UI</strong>
         </Text>
       </Container>
     </Box>
