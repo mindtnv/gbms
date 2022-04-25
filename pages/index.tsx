@@ -63,14 +63,14 @@ const Home: NextPage = () => {
           </Heading>
           <Text>
             19 лет, живу в Твери. Люблю решать проблемы кодом и автоматизировать
-            задачи. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Aliquam commodi consequatur eligendi enim facilis fuga ipsum
-            laudantium non numquam odit pariatur possimus quae, quidem ratione
-            voluptas. Aliquid et eum numquam!
+            рутинные задачи. Скромный, ответственный, самоорганизованный,
+            коммуникабельный, стрессоустойчивый, конкурентоспособный,
+            конструктивный, разносторонний, усидчивый, умный, креативный,
+            красивый.
           </Text>
         </AppBlock>
 
-        <Flex direction={["column", "row"]}>
+        <Flex direction={["column", "row"]} justify="space-between" w="100%">
           <AppBlock delay={0.2}>
             <Perks />
           </AppBlock>
@@ -99,6 +99,7 @@ const Home: NextPage = () => {
             <Heading as="h3" mb={4}>
               Ссылки
             </Heading>
+            <Text>Как со мной связаться. Где меня найти.</Text>
           </Box>
           <Link href="/links" passHref>
             <Button as="a">Полный список</Button>

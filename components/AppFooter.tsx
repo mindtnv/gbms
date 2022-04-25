@@ -15,7 +15,7 @@ const AppFooter = () => {
     >
       <Container maxW="container.lg">
         <Text align="center">
-          Builded by <strong>gbms</strong> with <strong>Next</strong>/
+          🛠 Builded by <strong>gbms</strong> with <strong>Next</strong>/
           <strong>Chakra UI</strong>
         </Text>
       </Container>

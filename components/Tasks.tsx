@@ -1,19 +1,36 @@
-import { Box, Heading, UnorderedList, ListItem } from "@chakra-ui/react";
+import {
+  Box,
+  Center,
+  Heading,
+  List,
+  ListIcon,
+  ListItem,
+} from "@chakra-ui/react";
+import { StarIcon } from "@chakra-ui/icons";
 
 const Tasks = () => {
+  const tasks = [
+    "Пожать 100кг от гуди",
+    "Построить бизнес",
+    "Построить дом",
+    "Посадить дерево",
+    "Вырастить сына",
+  ];
   return (
     <>
       <Box mb={4}>
         <Heading as="h3">Что хочу</Heading>
       </Box>
-      <UnorderedList>
-        <ListItem>
-          Пожать 50/60/70/80/90/<strong>100</strong>/110/120/130/140кг от груди
-        </ListItem>
-        <ListItem>
-          Создать альтернативу <strong>Anki</strong>
-        </ListItem>
-      </UnorderedList>
+      <List spacing={4}>
+        {tasks.map((task) => (
+          <ListItem key={task}>
+            <Center justifyContent="start">
+              <ListIcon as={StarIcon} color="orange.500" />
+              {task}
+            </Center>
+          </ListItem>
+        ))}
+      </List>
     </>
   );
 };
