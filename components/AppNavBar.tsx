@@ -3,7 +3,6 @@ import {
   Box,
   Container,
   Flex,
-  Heading,
   HStack,
   IconButton,
   Menu,
@@ -32,7 +31,6 @@ const AppNavBar = () => {
           <AppNavBarLogo />
           <HStack spacing={7} display={{ base: "none", sm: "flex" }}>
             <AppNavBarLink href="/projects">Проекты</AppNavBarLink>
-            <AppNavBarLink href="/posts">Посты</AppNavBarLink>
             <AppNavBarLink href="/links">Ссылки</AppNavBarLink>
           </HStack>
           <Box display={{ base: "inline-block", sm: "none" }}>
@@ -52,12 +50,7 @@ const AppNavBar = () => {
                 >
                   <MenuItem>Проекты</MenuItem>
                 </AppNavBarLink>
-                <AppNavBarLink
-                  href="/posts"
-                  _hover={{ textDecoration: "none" }}
-                >
-                  <MenuItem>Посты</MenuItem>
-                </AppNavBarLink>
+
                 <AppNavBarLink
                   href="/links"
                   _hover={{ textDecoration: "none" }}

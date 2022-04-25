@@ -1,19 +1,12 @@
 import {
   Box,
-  Heading,
-  VStack,
-  Text,
-  StackDivider,
-  Avatar,
-  Flex,
-  Center,
-  ListItem,
   Button,
-  UnorderedList,
-  OrderedList,
-  ListIcon,
-  List,
   Divider,
+  Flex,
+  Heading,
+  StackDivider,
+  Text,
+  VStack,
 } from "@chakra-ui/react";
 import logo from "../public/logo.jpg";
 import { motion } from "framer-motion";
@@ -23,7 +16,6 @@ import Head from "next/head";
 import Link from "next/link";
 import { useEffect } from "react";
 import AppBlock from "../components/AppBlock";
-import { CheckIcon } from "@chakra-ui/icons";
 import Perks from "../components/Perks";
 import Tasks from "../components/Tasks";
 
@@ -36,7 +28,7 @@ const Home: NextPage = () => {
       <Head>
         <title>gbms - Главная</title>
       </Head>
-      <VStack spacing={12} divider={<StackDivider></StackDivider>}>
+      <VStack spacing={12} divider={<StackDivider />}>
         <motion.div
           animate={{ opacity: [0, 1] }}
           transition={{
@@ -70,10 +62,11 @@ const Home: NextPage = () => {
             О себе
           </Heading>
           <Text>
-            19 лет, живу в Твери. Люблю TypeScript/.NET. Lorem, ipsum dolor sit
-            amet consectetur adipisicing elit. Id qui ad labore reiciendis odit,
-            quaerat veritatis minus explicabo excepturi. Enim harum velit modi
-            dolor expedita maxime autem nisi dicta vitae.
+            19 лет, живу в Твери. Люблю решать проблемы кодом и автоматизировать
+            задачи. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Aliquam commodi consequatur eligendi enim facilis fuga ipsum
+            laudantium non numquam odit pariatur possimus quae, quidem ratione
+            voluptas. Aliquid et eum numquam!
           </Text>
         </AppBlock>
 
@@ -90,27 +83,9 @@ const Home: NextPage = () => {
         <AppBlock delay={0.5}>
           <Box mb={4}>
             <Heading as="h3" mb={4}>
-              Что уже сделал
-            </Heading>
-            <Text>Список того, что я хочу:</Text>
-          </Box>
-          <UnorderedList>
-            <ListItem>
-              Пожать 50/60/70/80/90/<strong>100</strong>/110/120/130/140кг от
-              груди 💪
-            </ListItem>
-          </UnorderedList>
-        </AppBlock>
-
-        <AppBlock delay={0.5}>
-          <Box mb={4}>
-            <Heading as="h3" mb={4}>
               Мои проекты
             </Heading>
-            <Text>
-              Какой-то конкретной направленности в моих проектах нет. Занимаюсь
-              чем угодно, главное, чтобы было интересно.
-            </Text>
+            <Text>Полный список всех проектов с моим участием</Text>
           </Box>
           <Link href="/projects" passHref>
             <Button as="a" colorScheme="purple">

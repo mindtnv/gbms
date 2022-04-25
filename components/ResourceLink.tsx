@@ -1,7 +1,6 @@
-import { Button, ThemeTypings } from "@chakra-ui/react";
+import { Button, ChakraProps, ThemeTypings } from "@chakra-ui/react";
 import Link from "next/link";
 import { ReactElement } from "react";
-import { FaTelegramPlane } from "react-icons/fa";
 
 export type ResourceLinkProps = {
   href: string;
@@ -10,7 +9,7 @@ export type ResourceLinkProps = {
   icon: ReactElement;
   colorScheme?: ThemeTypings["colorSchemes"];
   children?: ReactElement | Array<ReactElement> | string;
-};
+} & ChakraProps;
 
 const ResourceLink = ({
   href,
@@ -19,9 +18,10 @@ const ResourceLink = ({
   icon,
   colorScheme = "blue",
   children,
+  ...props
 }: ResourceLinkProps) => {
   return (
-    <Link href={href.toString()} passHref>
+    <Link href={href.toString()} passHref {...props}>
       <Button
         as="a"
         target="_blank"

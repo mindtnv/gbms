@@ -7,7 +7,7 @@ const Perks = () => {
       <Heading as="h3" mb={4}>
         Что могу
       </Heading>
-      <List spacing={3}>
+      <List spacing={4}>
         <ListItem>
           <Center justifyContent="start">
             <ListIcon as={CheckIcon} color="green.500" />
