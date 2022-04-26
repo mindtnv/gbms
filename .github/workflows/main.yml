@@ -19,37 +19,29 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - 
-        name: Checkout
+      - name: Checkout
         uses: actions/checkout@v3
-        
-      -
-        name: Set up QEMU
-        uses: docker/setup-qemu-action@v1
-
-      -
-        name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
-        
-      -
-        name: Login to Registry
-        uses: docker/login-action@v1 
-        with:
-          registry: ${{ secrets.REGISTRY }}
-          username: ${{ secrets.REGISTRY_USERNAME }}
-          password: ${{ secrets.REGISTRY_PASSWORD }}
           
-      -
-        name: Build and push
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          platforms: linux/amd64,linux/arm64
-          push: true
-          tags: |
-            ${{ secrets.REGISTRY }}/gbms-site:latest
-      -
-        name: Deploy to swarm
+          #       -
+          #         name: Set up QEMU
+          #         uses: docker/setup-qemu-action@v1
+          
+          #       -
+          #         name: Set up Docker Buildx
+          #         uses: docker/setup-buildx-action@v1
+          
+          #       -
+          #         name: Login to Registry
+          #         uses: docker/login-action@v1 
+          #         with:
+          #           registry: ${{ secrets.REGISTRY }}
+          #           username: ${{ secrets.REGISTRY_USERNAME }}
+          #           password: ${{ secrets.REGISTRY_PASSWORD }}
+  
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to swarm
         uses: sagebind/docker-swarm-deploy-action@v2
         with:
           remote_host: ssh://admin@zldk.su
