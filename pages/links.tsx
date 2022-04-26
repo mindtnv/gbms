@@ -8,29 +8,28 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import Head from "next/head";
 import AppBlock from "../components/AppBlock";
 import { FaGithub, FaGitlab, FaSteam, FaTelegramPlane } from "react-icons/fa";
 import Link from "next/link";
 import ResourceLink from "../components/ResourceLink";
+import { NextPage } from "next";
 import PageHeader from "../components/PageHeader";
+import Head from "next/head";
 
-const LinkPage = () => {
+const LinkPage: NextPage = () => {
   return (
     <>
       <Head>
         <title>gbms | Ссылки</title>
       </Head>
-
-      <VStack spacing={12} divider={<StackDivider />}>
+      <VStack spacing={12} divider={<StackDivider />} width="100%">
         <PageHeader duration={0.6}>
           <Heading textAlign="center" as="h2" mb={[0, 2]}>
             Ссылки
           </Heading>
           <Text align="center">Как со мной связаться. Где меня найти.</Text>
         </PageHeader>
-
-        <AppBlock delay={0.05}>
+        <AppBlock delay={0.05} width="100%">
           <Box>
             <Heading as="h3" mb={5} textAlign="center">
               Социальные сети
@@ -52,15 +51,6 @@ const LinkPage = () => {
               >
                 ВКонтакте
               </ResourceLink>
-
-              {/* <ResourceLink
-                href="https://vk.com/id202727701"
-                bgColor="#5865F2"
-                hoverBgColor="#8D96F6"
-                icon={<FaDiscord />}
-              >
-                Discord
-              </ResourceLink> */}
 
               <Link
                 href="https://steamcommunity.com/id/godblessmysoul1/"

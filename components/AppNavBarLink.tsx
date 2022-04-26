@@ -15,8 +15,8 @@ const AppNavBarLink = ({
   ...props
 }: AppNavBarLinkProps) => {
   return (
-    <NextLink href={href ?? ""} scroll={false} passHref {...props}>
-      <Link target={target} {...props}>
+    <NextLink href={href ?? ""} passHref scroll={false} {...props}>
+      <Link target={target} as="a" {...props}>
         {children}
       </Link>
     </NextLink>

@@ -10,26 +10,22 @@ import {
 } from "@chakra-ui/react";
 import Logo from "../components/Logo";
 import type { NextPage } from "next";
-import Head from "next/head";
 import Link from "next/link";
-import { useEffect } from "react";
 import AppBlock from "../components/AppBlock";
 import Perks from "../components/Perks";
 import Tasks from "../components/Tasks";
 import AppNavBarLink from "../components/AppNavBarLink";
 import PageHeader from "../components/PageHeader";
+import Head from "next/head";
 
 const Home: NextPage = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   return (
     <>
       <Head>
         <title>gbms | Главная</title>
       </Head>
 
-      <VStack spacing={12} divider={<StackDivider />}>
+      <VStack spacing={12} divider={<StackDivider />} width="100%">
         <PageHeader duration={1}>
           <Logo />
           <Box>
@@ -75,7 +71,7 @@ const Home: NextPage = () => {
             </Heading>
             <Text>Полный список всех проектов с моим участием</Text>
           </Box>
-          <Link href="/projects" passHref>
+          <Link href="/projects" passHref scroll={false}>
             <Button as="a" colorScheme="purple">
               Моё портфолио
             </Button>
@@ -89,7 +85,7 @@ const Home: NextPage = () => {
             </Heading>
             <Text>Как со мной связаться. Где меня найти.</Text>
           </Box>
-          <Link href="/links" passHref>
+          <Link href="/links" passHref scroll={false}>
             <Button as="a">Полный список</Button>
           </Link>
         </AppBlock>

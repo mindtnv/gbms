@@ -11,6 +11,7 @@ const Logo = () => {
         width={250}
         height={250}
         layout="fixed"
+        priority={true}
         style={{ borderRadius: "100%" }}
       />
     </Flex>

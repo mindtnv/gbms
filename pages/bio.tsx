@@ -82,7 +82,7 @@ const BioPage: NextPage = () => {
       <Head>
         <title>gbms | Биография</title>
       </Head>
-      
+
       <VStack spacing={12} divider={<StackDivider />}>
         <PageHeader duration={0.6}>
           <Heading textAlign="center" as="h2" mb={[0, 2]}>

@@ -7,17 +7,12 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { NextPage } from "next";
-import Head from "next/head";
-import { useEffect } from "react";
 import AppBlock from "../components/AppBlock";
 import Project from "../components/Project";
 import PageHeader from "../components/PageHeader";
+import Head from "next/head";
 
 const ProjectsPage: NextPage = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
     <>
       <Head>
