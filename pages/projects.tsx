@@ -6,36 +6,31 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import { motion } from "framer-motion";
 import { NextPage } from "next";
 import Head from "next/head";
 import { useEffect } from "react";
 import AppBlock from "../components/AppBlock";
 import Project from "../components/Project";
+import PageHeader from "../components/PageHeader";
 
 const ProjectsPage: NextPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
     <>
       <Head>
         <title>gbms | Проекты</title>
       </Head>
+
       <VStack spacing={12} divider={<StackDivider />}>
-        <Box>
-          <motion.div
-            animate={{ opacity: [0, 1] }}
-            transition={{
-              default: { duration: 0.6 },
-            }}
-          >
-            <Heading textAlign="center" as="h2" mb={[0, 2]}>
-              Проекты
-            </Heading>
-            <Text align="center">Список всех проектов с моим участием</Text>
-          </motion.div>
-        </Box>
+        <PageHeader duration={0.6}>
+          <Heading textAlign="center" as="h2" mb={[0, 2]}>
+            Проекты
+          </Heading>
+          <Text align="center">Список всех проектов с моим участием</Text>
+        </PageHeader>
 
         <AppBlock delay={0.05}>
           <Box mb={8}>

@@ -8,10 +8,8 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import logo from "../public/logo.jpg";
-import { motion } from "framer-motion";
+import Logo from "../components/Logo";
 import type { NextPage } from "next";
-import Image from "next/image";
 import Head from "next/head";
 import Link from "next/link";
 import { useEffect } from "react";
@@ -19,6 +17,7 @@ import AppBlock from "../components/AppBlock";
 import Perks from "../components/Perks";
 import Tasks from "../components/Tasks";
 import AppNavBarLink from "../components/AppNavBarLink";
+import PageHeader from "../components/PageHeader";
 
 const Home: NextPage = () => {
   useEffect(() => {
@@ -29,34 +28,19 @@ const Home: NextPage = () => {
       <Head>
         <title>gbms | Главная</title>
       </Head>
+
       <VStack spacing={12} divider={<StackDivider />}>
-        <motion.div
-          animate={{ opacity: [0, 1] }}
-          transition={{
-            default: { duration: 1 },
-          }}
-        >
+        <PageHeader duration={1}>
+          <Logo />
           <Box>
-            <Flex justify="center" w="100%" mb={8}>
-              <Image
-                alt="logo"
-                src={logo}
-                width={250}
-                height={250}
-                layout="fixed"
-                style={{ borderRadius: "100%" }}
-              />
-            </Flex>
-            <Box>
-              <Heading as="h2" textAlign="center" mb={[4, 0]}>
-                gbms aka godblessmysoul
-              </Heading>
-              <Text align="center">
-                Fullstack JS/TS/.NET developer | Design stealer
-              </Text>
-            </Box>
+            <Heading as="h2" textAlign="center" mb={[4, 0]}>
+              gbms aka godblessmysoul
+            </Heading>
+            <Text align="center">
+              Fullstack JS/TS/.NET developer | Design stealer
+            </Text>
           </Box>
-        </motion.div>
+        </PageHeader>
 
         <AppBlock delay={0.05}>
           <Heading as="h3" mb={4}>
@@ -75,11 +59,11 @@ const Home: NextPage = () => {
         </AppBlock>
 
         <Flex direction={["column", "row"]} justify="space-between" w="100%">
-          <AppBlock delay={0.2}>
+          <AppBlock delay={0.2} minW={["100%", 325]} width="auto">
             <Perks />
           </AppBlock>
           <Divider my={[12, 0]} display={["block", "none"]} />
-          <AppBlock delay={0.2}>
+          <AppBlock delay={0.2} minW={["100%", 275]} width="auto">
             <Tasks />
           </AppBlock>
         </Flex>

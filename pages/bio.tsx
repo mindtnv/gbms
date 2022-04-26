@@ -11,8 +11,8 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import { motion } from "framer-motion";
 import AppBlock from "../components/AppBlock";
+import PageHeader from "../components/PageHeader";
 
 const BioPage: NextPage = () => {
   const characteristics = [
@@ -82,20 +82,15 @@ const BioPage: NextPage = () => {
       <Head>
         <title>gbms | Биография</title>
       </Head>
+      
       <VStack spacing={12} divider={<StackDivider />}>
-        <Box>
-          <motion.div
-            animate={{ opacity: [0, 1] }}
-            transition={{
-              default: { duration: 0.6 },
-            }}
-          >
-            <Heading textAlign="center" as="h2" mb={[0, 2]}>
-              Биография
-            </Heading>
-            <Text align="center">Полный список моих характеристик</Text>
-          </motion.div>
-        </Box>
+        <PageHeader duration={0.6}>
+          <Heading textAlign="center" as="h2" mb={[0, 2]}>
+            Биография
+          </Heading>
+          <Text align="center">Полный список моих характеристик</Text>
+        </PageHeader>
+
         <AppBlock delay={0.05}>
           <Box>
             <Heading as="h3" mb={[10, 14]}>

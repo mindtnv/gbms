@@ -1,26 +1,19 @@
 import { ChatIcon } from "@chakra-ui/icons";
 import {
-  VStack,
-  StackDivider,
   Box,
-  Heading,
-  Text,
   Button,
-  HStack,
+  Heading,
   Stack,
+  StackDivider,
+  Text,
+  VStack,
 } from "@chakra-ui/react";
-import { motion } from "framer-motion";
 import Head from "next/head";
 import AppBlock from "../components/AppBlock";
-import {
-  FaDiscord,
-  FaGithub,
-  FaGitlab,
-  FaSteam,
-  FaTelegramPlane,
-} from "react-icons/fa";
+import { FaGithub, FaGitlab, FaSteam, FaTelegramPlane } from "react-icons/fa";
 import Link from "next/link";
 import ResourceLink from "../components/ResourceLink";
+import PageHeader from "../components/PageHeader";
 
 const LinkPage = () => {
   return (
@@ -28,20 +21,14 @@ const LinkPage = () => {
       <Head>
         <title>gbms | Ссылки</title>
       </Head>
+
       <VStack spacing={12} divider={<StackDivider />}>
-        <Box>
-          <motion.div
-            animate={{ opacity: [0, 1] }}
-            transition={{
-              default: { duration: 0.6 },
-            }}
-          >
-            <Heading textAlign="center" as="h2" mb={[0, 2]}>
-              Ссылки
-            </Heading>
-            <Text align="center">Как со мной связаться. Где меня найти.</Text>
-          </motion.div>
-        </Box>
+        <PageHeader duration={0.6}>
+          <Heading textAlign="center" as="h2" mb={[0, 2]}>
+            Ссылки
+          </Heading>
+          <Text align="center">Как со мной связаться. Где меня найти.</Text>
+        </PageHeader>
 
         <AppBlock delay={0.05}>
           <Box>
