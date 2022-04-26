@@ -1,0 +1,30 @@
+﻿version: "3.7"
+
+networks:
+  traefik-public:
+    external: true
+
+services:
+  gbms-site:
+    image: registry.dev.zldk.su/gbms-site
+    networks:
+      - traefik-public
+    
+    deploy:
+      restart_policy:
+        condition: on-failure
+      mode: replicated
+      replicas: 1
+      labels:
+        - traefik.enable=true
+        - traefik.docker.network=traefik-public
+        - traefik.http.routers.gbms-site.rule=Host(`gbms.dev.zldk.su`)
+        - traefik.http.routers.gbms-site-http.entrypoints=http
+        - traefik.http.routers.gbms-site-http.service=gbms-site
+        - traefik.http.routers.gbms-site-http.rule=Host(`gbms.zldk.su`)
+        - traefik.http.routers.gbms-site-http.middlewares=https-redirect
+        - traefik.http.routers.gbms-site.entrypoints=https
+        - traefik.http.routers.gbms-site.tls=true
+        - traefik.http.routers.gbms-site.tls.certresolver=le
+        - traefik.http.services.gbms-site.loadbalancer.server.port=3000
+        - traefik.http.routers.gbms-site.service=gbms-site
