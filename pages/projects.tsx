@@ -6,13 +6,21 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import { NextPage } from "next";
 import AppBlock from "../components/AppBlock";
-import Project from "../components/Project";
 import PageHeader from "../components/PageHeader";
 import Head from "next/head";
+import ProjectBlockLink from "../components/ProjectBlockLink";
+import categories from "../data/projects/categories.json";
+import projects from "../data/projects/projects.json";
+import { Project, ProjectCategory } from "../types";
+import ProjectInlineLink from "../components/ProjectInlineLink";
 
-const ProjectsPage: NextPage = () => {
+export type ProjectsPageProps = {
+  projects: Project[];
+  categories: ProjectCategory[];
+};
+
+const ProjectsPage = ({ projects, categories }: ProjectsPageProps) => {
   return (
     <>
       <Head>
@@ -27,70 +35,49 @@ const ProjectsPage: NextPage = () => {
           <Text align="center">Список всех проектов с моим участием</Text>
         </PageHeader>
 
-        <AppBlock delay={0.05}>
-          <Box mb={8}>
-            <Heading as="h3" mb={4}>
-              Основные проекты
-            </Heading>
-            <Text>
-              Проекты на которые я потратил много времени и пользуюсь ими /
-              поддерживаю их в настоящем.
-            </Text>
-          </Box>
-          <SimpleGrid columns={{ sm: 1, md: 2 }} spacingX={5} spacingY="3rem">
-            <Project
-              href="https://mindtnv.gitlab.io/deadinsidenickgenerator/"
-              image="/deadinsidegenerator.png"
-              title="Дед инсайд генератор ников"
-              summary="Генерирует ники для мёртвых внутри ноулайферов."
-            />
-          </SimpleGrid>
-        </AppBlock>
+        {categories.map((category) => (
+          <Box key={category.title} width="100%">
+            <AppBlock delay={0.05}>
+              <Box mb={8}>
+                <Heading as="h3" mb={2} textAlign="left">
+                  {category.title}
+                </Heading>
+                <Text textAlign="left">{category.description}</Text>
+              </Box>
 
-        <AppBlock delay={0.2}>
-          <Box mb={8}>
-            <Heading as="h3" mb={4}>
-              Пет проекты
-            </Heading>
-            <Text>
-              Проекты, созданные мной ради развлечения / в учебных целях.
-            </Text>
+              <SimpleGrid
+                columns={{ sm: 1, md: 2 }}
+                spacingX={5}
+                spacingY={["2rem", "3rem"]}
+              >
+                {projects
+                  .filter((p) => p.categoryId === category.id)
+                  .map((project) =>
+                    category.format === "block" ? (
+                      <ProjectBlockLink project={project} key={project.title} />
+                    ) : (
+                      <ProjectInlineLink
+                        project={project}
+                        key={project.title}
+                      />
+                    )
+                  )}
+              </SimpleGrid>
+            </AppBlock>
           </Box>
-          <SimpleGrid columns={{ sm: 1, md: 2 }} spacingX={5} spacingY="3rem">
-            <Project
-              href="https://mindtnv.gitlab.io/deadinsidenickgenerator/"
-              image="/deadinsidegenerator.png"
-              title="Дед инсайд генератор ников"
-              summary="Генерирует ники для мёртвых внутри ноулайферов."
-            />
-            <Project
-              href="https://mindtnv.gitlab.io/deadinsidenickgenerator/"
-              image="/deadinsidegenerator.png"
-              title="Дед инсайд генератор ников"
-              summary="Генерирует ники для мёртвых внутри ноулайферов."
-            />
-            <Project
-              href="https://mindtnv.gitlab.io/deadinsidenickgenerator/"
-              image="/deadinsidegenerator.png"
-              title="Дед инсайд генератор ников"
-              summary="Генерирует ники для мёртвых внутри ноулайферов."
-            />
-          </SimpleGrid>
-        </AppBlock>
-
-        <AppBlock delay={0.35}>
-          <Box mb={8}>
-            <Heading as="h3" mb={4}>
-              Поделки
-            </Heading>
-            <Text>
-              Проекты, созданные мной ради развлечения / в учебных целях.
-            </Text>
-          </Box>
-        </AppBlock>
+        ))}
       </VStack>
     </>
   );
 };
+
+export async function getStaticProps() {
+  return {
+    props: {
+      projects: projects.data,
+      categories: categories.data,
+    },
+  };
+}
 
 export default ProjectsPage;

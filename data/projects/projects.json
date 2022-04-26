@@ -1,0 +1,26 @@
+﻿{
+  "data": [
+    {
+      "id": "0",
+      "title": "Дед инсайд генератор ников",
+      "href": "https://mindtnv.gitlab.io/deadinsidenickgenerator/",
+      "image": "/deadinsidegenerator.png",
+      "description": "Генерирует ники для мёртвых внутри ноулайферов.",
+      "categoryId": 1
+    },
+    {
+      "id": "10",
+      "title": "AnkiTools",
+      "href": "https://gitlab.com/anki-tools/ankitools",
+      "description": "Консольная утилита для работы с Anki через консоль.",
+      "categoryId": 2
+    },
+    {
+      "id": "11",
+      "title": "AnkiNet",
+      "href": "https://gitlab.com/anki-tools/ankinet",
+      "description": "Библиотека для взаимодействия с Anki-Connect",
+      "categoryId": 2
+    }
+  ]
+}

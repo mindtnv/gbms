@@ -3,7 +3,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import AppLayout from "../components/layouts/AppLayout";
 import Fonts from "../components/Fonts";
 import theme from "../theme";
-import AnimationLayout from "../components/AnimationLayout";
+import AnimationLayout from "../components/layouts/AnimationLayout";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (

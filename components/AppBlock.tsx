@@ -9,7 +9,7 @@ export type AppBlockProps = {
 
 const AppBlock = ({ children, delay, ...props }: AppBlockProps) => {
   return (
-    <Box width="100%" as="div" {...props}>
+    <Box width="100%" as="main" {...props}>
       <motion.div
         animate={{ opacity: [0, 1], y: [30, 0] }}
         transition={{
