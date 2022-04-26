@@ -1,5 +1,5 @@
 import { CheckIcon } from "@chakra-ui/icons";
-import { Heading, List, ListItem, Center, ListIcon } from "@chakra-ui/react";
+import { Center, Heading, List, ListIcon, ListItem } from "@chakra-ui/react";
 
 const Perks = () => {
   return (
@@ -18,6 +18,12 @@ const Perks = () => {
           <Center justifyContent="start">
             <ListIcon as={CheckIcon} color="green.500" />
             Frontend React, NextJs, TS
+          </Center>
+        </ListItem>
+        <ListItem>
+          <Center justifyContent="start">
+            <ListIcon as={CheckIcon} color="green.500" />
+            Docker/Traefik/Prometheus
           </Center>
         </ListItem>
         <ListItem>

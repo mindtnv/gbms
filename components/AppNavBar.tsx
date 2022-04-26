@@ -32,6 +32,7 @@ const AppNavBar = () => {
           <HStack spacing={7} display={{ base: "none", sm: "flex" }}>
             <AppNavBarLink href="/projects">Проекты</AppNavBarLink>
             <AppNavBarLink href="/links">Ссылки</AppNavBarLink>
+            <AppNavBarLink href="/bio">Биография</AppNavBarLink>
           </HStack>
           <Box display={{ base: "inline-block", sm: "none" }}>
             <Menu isLazy id="navbar-menu">
@@ -56,6 +57,10 @@ const AppNavBar = () => {
                   _hover={{ textDecoration: "none" }}
                 >
                   <MenuItem>Ссылки</MenuItem>
+                </AppNavBarLink>
+
+                <AppNavBarLink href="/bio" _hover={{ textDecoration: "none" }}>
+                  <MenuItem>Биография</MenuItem>
                 </AppNavBarLink>
               </MenuList>
             </Menu>

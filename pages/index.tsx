@@ -18,6 +18,7 @@ import { useEffect } from "react";
 import AppBlock from "../components/AppBlock";
 import Perks from "../components/Perks";
 import Tasks from "../components/Tasks";
+import AppNavBarLink from "../components/AppNavBarLink";
 
 const Home: NextPage = () => {
   useEffect(() => {
@@ -26,7 +27,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>gbms - Главная</title>
+        <title>gbms | Главная</title>
       </Head>
       <VStack spacing={12} divider={<StackDivider />}>
         <motion.div
@@ -58,7 +59,7 @@ const Home: NextPage = () => {
         </motion.div>
 
         <AppBlock delay={0.05}>
-          <Heading as="h2" mb={4}>
+          <Heading as="h3" mb={4}>
             О себе
           </Heading>
           <Text>
@@ -66,7 +67,10 @@ const Home: NextPage = () => {
             рутинные задачи. Скромный, ответственный, самоорганизованный,
             коммуникабельный, стрессоустойчивый, конкурентоспособный,
             конструктивный, разносторонний, усидчивый, умный, креативный,
-            красивый.
+            красивый{" "}
+            <AppNavBarLink href="/bio" textDecoration="underline">
+              ...
+            </AppNavBarLink>
           </Text>
         </AppBlock>
 

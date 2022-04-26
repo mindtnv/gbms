@@ -26,7 +26,7 @@ const LinkPage = () => {
   return (
     <>
       <Head>
-        <title>gbms - Ссылки</title>
+        <title>gbms | Ссылки</title>
       </Head>
       <VStack spacing={12} divider={<StackDivider />}>
         <Box>

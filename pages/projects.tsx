@@ -20,7 +20,7 @@ const ProjectsPage: NextPage = () => {
   return (
     <>
       <Head>
-        <title>gbms - Проекты</title>
+        <title>gbms | Проекты</title>
       </Head>
       <VStack spacing={12} divider={<StackDivider />}>
         <Box>
