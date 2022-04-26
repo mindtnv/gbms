@@ -48,4 +48,12 @@ jobs:
           push: true
           tags: |
             ${{ secrets.REGISTRY }}/gbms-site:latest
+      -
+        name: Deploy to swarm
+        uses: sagebind/docker-swarm-deploy-action@v2
+        with:
+          remote_host: ssh://admin@zldk.su
+          ssh_private_key: ${{ secrets.DOCKER_SSH_PRIVATE_KEY }}
+          ssh_public_key: ${{ secrets.DOCKER_SSH_PUBLIC_KEY }}
+          args: stack deploy --compose-file docker-compose.yml gbms-site
 
