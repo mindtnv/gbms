@@ -7,6 +7,24 @@ on:
   workflow_dispatch:
 
 jobs:
+  push-notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pushed Notification
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          format: markdown
+          message: |
+            Repository **${{ github.repository }}** updated
+            
+            Commit message: **${{ github.event.commits[0].message }}**
+            
+            Start building...
+            
+          sticker: CAACAgIAAxkBAAMGYmj9-DxfAAFhb_kfXi4QhYVVLbmoAALyBgACRvusBLDnKVjPkOopJAQ 
+  
   build-push:
     runs-on: ubuntu-latest
     
