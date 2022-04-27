@@ -17,17 +17,16 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           format: markdown
           message: |
-            Start building... **${{ github.repository }}**
+            **${{ github.repository }}** - building
             **${{ github.event.commits[0].message }}**
 
       - name: Pushed Notification Sticker
         uses: wei/curl@master
         with:
-          args: https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendSticker?chat_id=${{ secrets.TELEGRAM_TO }}&sticker=CAACAgIAAxkBAAEEkjViaP9LT3SxvmjFZSFQOWRavJaPPwAC8gYAAkb7rASw5ylYz5DqKSQE
+          args: https://api.telegram.org/bot${{secrets.TELEGRAM_TOKEN}}/sendSticker?chat_id=${{secrets.TELEGRAM_TO}}&sticker=CAADAgADOQADfyesDlKEqOOd72VKAg
   
   build-push:
     runs-on: ubuntu-latest
-    
     steps:
       - name: Checkout
         uses: actions/checkout@v3
