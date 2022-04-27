@@ -18,10 +18,10 @@ services:
       labels:
         - traefik.enable=true
         - traefik.docker.network=traefik-public
-        - traefik.http.routers.gbms-site.rule=Host(`gbms.dev.zldk.su`)
+        - traefik.http.routers.gbms-site.rule=Host(`gbms.site`)
         - traefik.http.routers.gbms-site-http.entrypoints=http
         - traefik.http.routers.gbms-site-http.service=gbms-site
-        - traefik.http.routers.gbms-site-http.rule=Host(`gbms.zldk.su`)
+        - traefik.http.routers.gbms-site-http.rule=Host(`gbms.site`)
         - traefik.http.routers.gbms-site-http.middlewares=https-redirect
         - traefik.http.routers.gbms-site.entrypoints=https
         - traefik.http.routers.gbms-site.tls=true
