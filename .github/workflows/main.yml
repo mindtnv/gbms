@@ -45,7 +45,7 @@ jobs:
           ssh_public_key: ${{ secrets.DOCKER_SSH_PUBLIC_KEY }}
           deployment_mode: docker-swarm
           copy_stack_file: true
-          deploy_path: /root/my-deployment
+          deploy_path: /home/admin/deployments/gbms-site
           stack_file_name: docker-compose.yaml
           keep_files: 3
           args: gbms-site
