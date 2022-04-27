@@ -23,7 +23,7 @@ jobs:
       - name: Pushed Notification Sticker
         uses: wei/curl@master
         with:
-          args: https://api.telegram.org/bot${{secrets.TELEGRAM_TOKEN}}/sendSticker?chat_id=${{secrets.TELEGRAM_TO}}&sticker=CAADAgADOQADfyesDlKEqOOd72VKAg
+          args: "https://api.telegram.org/bot${{secrets.TELEGRAM_TOKEN}}/sendSticker?chat_id=${{secrets.TELEGRAM_TO}}&sticker=CAADAgADOQADfyesDlKEqOOd72VKAg"
   
   build-push:
     runs-on: ubuntu-latest
