@@ -35,7 +35,7 @@ const Perks = () => {
         <ListItem>
           <Center justifyContent="start">
             <ListIcon as={CheckIcon} color="yellow.500" />
-            Frontend Vue
+            Frontend - Vue 3
           </Center>
         </ListItem>
         <ListItem>
