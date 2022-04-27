@@ -17,13 +17,13 @@ const Perks = () => {
         <ListItem>
           <Center justifyContent="start">
             <ListIcon as={CheckIcon} color="green.500" />
-            Frontend React, NextJs, TS
+            Frontend - React, NextJs, TS
           </Center>
         </ListItem>
         <ListItem>
           <Center justifyContent="start">
             <ListIcon as={CheckIcon} color="green.500" />
-            Docker/Traefik/Prometheus
+            DevOps - Docker/Traefik/Prometheus
           </Center>
         </ListItem>
         <ListItem>
