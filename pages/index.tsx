@@ -16,10 +16,10 @@ import SkillsList from "../components/SkillsList";
 import TasksList from "../components/TasksList";
 import AppNavBarLink from "../components/AppNavBarLink";
 import PageHeader from "../components/PageHeader";
-import Head from "next/head";
 import { Skill } from "../types";
 import tasksData from "../data/index/tasks.json";
 import skillsData from "../data/index/skills.json";
+import { NextSeo } from "next-seo";
 
 export type HomePageProps = {
   tasks: string[];
@@ -29,9 +29,10 @@ export type HomePageProps = {
 const Home: NextPage<HomePageProps> = ({ tasks, skills }: HomePageProps) => {
   return (
     <>
-      <Head>
-        <title>gbms | Главная</title>
-      </Head>
+      <NextSeo
+        title="gbms | Главная"
+        description="Я gbms. Люблю решать проблемы кодом и автоматизировать рутинные задачи. Список моих проектов и целей."
+      />
 
       <VStack spacing={12} divider={<StackDivider />} width="100%">
         <PageHeader duration={1}>

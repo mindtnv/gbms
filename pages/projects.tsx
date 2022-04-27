@@ -8,12 +8,12 @@ import {
 } from "@chakra-ui/react";
 import AppBlock from "../components/AppBlock";
 import PageHeader from "../components/PageHeader";
-import Head from "next/head";
 import ProjectBlockLink from "../components/ProjectBlockLink";
 import categories from "../data/projects/categories.json";
 import projects from "../data/projects/projects.json";
 import { Project, ProjectCategory } from "../types";
 import ProjectInlineLink from "../components/ProjectInlineLink";
+import { NextSeo } from "next-seo";
 
 export type ProjectsPageProps = {
   projects: Project[];
@@ -23,9 +23,10 @@ export type ProjectsPageProps = {
 const ProjectsPage = ({ projects, categories }: ProjectsPageProps) => {
   return (
     <>
-      <Head>
-        <title>gbms | Проекты</title>
-      </Head>
+      <NextSeo
+        title="gbms | Проекты"
+        description="Список всех моих проектов. Список всех проектов с моим участием."
+      />
 
       <VStack spacing={12} divider={<StackDivider />}>
         <PageHeader duration={0.6}>

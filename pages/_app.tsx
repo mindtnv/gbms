@@ -4,15 +4,18 @@ import AppLayout from "../components/layouts/AppLayout";
 import Fonts from "../components/Fonts";
 import theme from "../theme";
 import AnimationLayout from "../components/layouts/AnimationLayout";
+import SeoLayout from "../components/layouts/SeoLayout";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
       <Fonts />
       <AppLayout>
-        <AnimationLayout route={router.route}>
-          <Component {...pageProps} />
-        </AnimationLayout>
+        <SeoLayout>
+          <AnimationLayout route={router.route}>
+            <Component {...pageProps} />
+          </AnimationLayout>
+        </SeoLayout>
       </AppLayout>
     </ChakraProvider>
   );

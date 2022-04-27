@@ -1,12 +1,14 @@
-import { Heading } from "@chakra-ui/react";
+import { Heading, HStack } from "@chakra-ui/react";
 import AppNavBarLink from "./AppNavBarLink";
 
 const AppNavBarLogo = () => {
   return (
     <AppNavBarLink href="/" _hover={{ textDecoration: "none" }}>
-      <Heading as="h2" fontSize={26}>
-        gbms
-      </Heading>
+      <HStack alignContent="center">
+        <Heading as="h2" fontSize={26}>
+          gbms
+        </Heading>
+      </HStack>
     </AppNavBarLink>
   );
 };

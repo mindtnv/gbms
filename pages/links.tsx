@@ -15,13 +15,15 @@ import ResourceLink from "../components/ResourceLink";
 import { NextPage } from "next";
 import PageHeader from "../components/PageHeader";
 import Head from "next/head";
+import { NextSeo } from "next-seo";
 
 const LinkPage: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>gbms | Ссылки</title>
-      </Head>
+      <NextSeo
+        title="gbms | Ссылки"
+        description="Как со мной свзяться. Где меня найти."
+      />
       <VStack spacing={12} divider={<StackDivider />} width="100%">
         <PageHeader duration={0.6}>
           <Heading textAlign="center" as="h2" mb={[0, 2]}>

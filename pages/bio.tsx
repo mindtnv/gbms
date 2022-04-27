@@ -14,6 +14,7 @@ import {
 import AppBlock from "../components/AppBlock";
 import PageHeader from "../components/PageHeader";
 import characteristicData from "../data/bio/characteristics.json";
+import { NextSeo } from "next-seo";
 
 export type BioPageProps = {
   characteristics: { [index: string]: Array<string> };
@@ -22,9 +23,10 @@ export type BioPageProps = {
 const BioPage: NextPage<BioPageProps> = ({ characteristics }: BioPageProps) => {
   return (
     <>
-      <Head>
-        <title>gbms | Биография</title>
-      </Head>
+      <NextSeo
+        title="gbms | Биография"
+        description="Моя биография. Мои качества."
+      />
 
       <VStack spacing={12} divider={<StackDivider />}>
         <PageHeader duration={0.6}>
