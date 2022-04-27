@@ -1,6 +1,7 @@
 import {
   Box,
   Center,
+  ChakraProps,
   Heading,
   List,
   ListIcon,
@@ -8,13 +9,11 @@ import {
 } from "@chakra-ui/react";
 import { StarIcon } from "@chakra-ui/icons";
 
-const Tasks = () => {
-  const tasks = [
-    "Пожать 100кг от гуди",
-    "Построить бизнес",
-    "Построить дом",
-    "Посадить дерево",
-  ];
+export type TasksListProps = {
+  tasks: string[];
+} & ChakraProps;
+
+const TasksList = ({ tasks, ...props }: TasksListProps) => {
   return (
     <>
       <Box mb={4}>
@@ -34,4 +33,4 @@ const Tasks = () => {
   );
 };
 
-export default Tasks;
+export default TasksList;

@@ -13,12 +13,17 @@ import type { NextPage } from "next";
 import Link from "next/link";
 import AppBlock from "../components/AppBlock";
 import Perks from "../components/Perks";
-import Tasks from "../components/Tasks";
+import TasksList from "../components/TasksList";
 import AppNavBarLink from "../components/AppNavBarLink";
 import PageHeader from "../components/PageHeader";
 import Head from "next/head";
+import tasksData from "../data/index/tasks.json";
 
-const Home: NextPage = () => {
+export type HomePageProps = {
+  tasks: string[];
+};
+
+const Home: NextPage<HomePageProps> = ({ tasks }: HomePageProps) => {
   return (
     <>
       <Head>
@@ -60,7 +65,7 @@ const Home: NextPage = () => {
           </AppBlock>
           <Divider my={[12, 0]} display={["block", "none"]} />
           <AppBlock delay={0.2} minW={["100%", 275]} width="auto">
-            <Tasks />
+            <TasksList tasks={tasks} />
           </AppBlock>
         </Flex>
 
@@ -93,5 +98,13 @@ const Home: NextPage = () => {
     </>
   );
 };
+
+export async function getStaticProps() {
+  return {
+    props: {
+      tasks: tasksData.data,
+    },
+  };
+}
 
 export default Home;
