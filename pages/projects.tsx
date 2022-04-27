@@ -47,8 +47,9 @@ const ProjectsPage = ({ projects, categories }: ProjectsPageProps) => {
 
               <SimpleGrid
                 columns={{ sm: 1, md: 2 }}
-                spacingX={5}
+                justifyContent={["space-around", "space-between"]}
                 spacingY={["2rem", "3rem"]}
+                spacingX={category.format === "block" ? 0 : 5}
               >
                 {projects
                   .filter((p) => p.categoryId === category.id)

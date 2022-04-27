@@ -1,4 +1,4 @@
-name: CI
+name: CD
 
 on:
   push:
@@ -17,8 +17,9 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           format: markdown
           message: |
-            **${{ github.repository }}** - building
-            **${{ github.event.commits[0].message }}**
+            START BUILD
+            *${{ github.repository }}*
+            *${{ github.event.commits[0].message }}*
 
   build-push:
     runs-on: ubuntu-latest
@@ -54,9 +55,11 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
+          format: markdown
           message: |
-            **${{ github.repository }}** - builded and published
-            **${{ github.event.commits[0].message }}**
+            BUILD-PUSH COMPLETE
+            *${{ github.repository }}*
+            *${{ github.event.commits[0].message }}*
 
   deploy:
     runs-on: ubuntu-latest
@@ -82,6 +85,8 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
+          format: markdown
           message: |
-            **${{ github.repository }}** - deployed
-            **${{ github.event.commits[0].message }}**
+            DEPLOY COMPLETE
+            *${{ github.repository }}*
+            *${{ github.event.commits[0].message }}*
