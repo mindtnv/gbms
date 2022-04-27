@@ -13,3 +13,9 @@ export type ProjectCategory = {
   description: string;
   format: string;
 };
+
+export type Skill = {
+  id: number;
+  title: string;
+  color: string;
+};

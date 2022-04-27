@@ -12,18 +12,21 @@ import Logo from "../components/Logo";
 import type { NextPage } from "next";
 import Link from "next/link";
 import AppBlock from "../components/AppBlock";
-import Perks from "../components/Perks";
+import SkillsList from "../components/SkillsList";
 import TasksList from "../components/TasksList";
 import AppNavBarLink from "../components/AppNavBarLink";
 import PageHeader from "../components/PageHeader";
 import Head from "next/head";
+import { Skill } from "../types";
 import tasksData from "../data/index/tasks.json";
+import skillsData from "../data/index/skills.json";
 
 export type HomePageProps = {
   tasks: string[];
+  skills: Skill[];
 };
 
-const Home: NextPage<HomePageProps> = ({ tasks }: HomePageProps) => {
+const Home: NextPage<HomePageProps> = ({ tasks, skills }: HomePageProps) => {
   return (
     <>
       <Head>
@@ -61,7 +64,7 @@ const Home: NextPage<HomePageProps> = ({ tasks }: HomePageProps) => {
 
         <Flex direction={["column", "row"]} justify="space-between" w="100%">
           <AppBlock delay={0.2} minW={["100%", 325]} width="auto">
-            <Perks />
+            <SkillsList skills={skills} />
           </AppBlock>
           <Divider my={[12, 0]} display={["block", "none"]} />
           <AppBlock delay={0.2} minW={["100%", 275]} width="auto">
@@ -103,6 +106,7 @@ export async function getStaticProps() {
   return {
     props: {
       tasks: tasksData.data,
+      skills: skillsData.data,
     },
   };
 }

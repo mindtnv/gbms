@@ -1,0 +1,39 @@
+{
+  "data": [
+    {
+      "id": 0,
+      "title": "Backend .NET - ASP.NET Core, EF Core",
+      "color": "green.500"
+    },
+    {
+      "id": 1,
+      "title": "Frontend - React, NextJs, TS",
+      "color": "green.500"
+    },
+    {
+      "id": 2,
+      "title": "DevOps - Docker/Traefik/Prometheus",
+      "color": "green.500"
+    },
+    {
+      "id": 3,
+      "title": "Backend Node - NestJs, Prisma, TS",
+      "color": "green.500"
+    },
+    {
+      "id": 4,
+      "title": "Frontend - Vue 3",
+      "color": "yellow.500"
+    },
+    {
+      "id": 5,
+      "title": "Вёрстка",
+      "color": "red.500"
+    },
+    {
+      "id": 6,
+      "title": "Дизайн",
+      "color": "red.500"
+    }
+  ]
+}
