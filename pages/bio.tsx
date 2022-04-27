@@ -13,70 +13,13 @@ import {
 } from "@chakra-ui/react";
 import AppBlock from "../components/AppBlock";
 import PageHeader from "../components/PageHeader";
+import characteristicData from "../data/bio/characteristics.json";
 
-const BioPage: NextPage = () => {
-  const characteristics = [
-    "адаптивный",
-    "амбициозный",
-    "бдительный",
-    "безбоязненный",
-    "бойкий",
-    "вдохновенный",
-    "вдумчивый",
-    "великодушный",
-    "внимательный",
-    "гениальный",
-    "гибкий",
-    "дивный",
-    "добрый",
-    "догадливый",
-    "душевный",
-    "естественный",
-    "жизнелюбивый",
-    "забавный",
-    "задорный",
-    "идейный",
-    "импозантный",
-    "искренний",
-    "конкурентоспособный",
-    "конструктивный",
-    "коммуникабельный",
-    "корректный",
-    "любознательный",
-    "любвеобильный",
-    "непринужденный",
-    "одухотворенный",
-    "оптимистичный",
-    "правдивый",
-    "притягательный",
-    "разносторонний",
-    "сообразительный",
-    "талантливый",
-    "творческий",
-    "уравновешенный",
-    "харизматичный",
-    "чистоплотный",
-    "чувственный",
-    "эмоциональный",
-    "энергичный",
-    "эрудированный",
-    "яркий",
-    "красивый",
-    "скромный",
-    "умный",
-    "сильный",
-    "великолепный",
-  ]
-    .map((x) => x.toLowerCase())
-    .sort();
+export type BioPageProps = {
+  characteristics: { [index: string]: Array<string> };
+};
 
-  const headers: { [index: string]: Array<string> } = {};
-
-  characteristics.forEach((c) => {
-    if (!(c[0] in headers)) headers[c[0]] = [];
-    headers[c[0]].push(c);
-  });
-
+const BioPage: NextPage<BioPageProps> = ({ characteristics }: BioPageProps) => {
   return (
     <>
       <Head>
@@ -102,13 +45,13 @@ const BioPage: NextPage = () => {
             justifyContent="space-between"
             rowGap={10}
           >
-            {Object.keys(headers).map((h) => (
+            {Object.keys(characteristics).map((h) => (
               <GridItem key={h}>
                 <Heading as="h4" mb={4}>
                   {h.toUpperCase()}
                 </Heading>
                 <List>
-                  {headers[h].map((c) => (
+                  {characteristics[h].map((c) => (
                     <ListItem key={c}>
                       <Text fontSize="xl">
                         {c[0].toUpperCase() + c.substring(1)}
@@ -124,5 +67,23 @@ const BioPage: NextPage = () => {
     </>
   );
 };
+
+export async function getStaticProps() {
+  const characteristics = characteristicData.data
+    .map((x) => x.toLowerCase())
+    .sort();
+  const result: { [index: string]: Array<string> } = {};
+
+  characteristics.forEach((c) => {
+    if (!(c[0] in result)) result[c[0]] = [];
+    result[c[0]].push(c);
+  });
+
+  return {
+    props: {
+      characteristics: result,
+    },
+  };
+}
 
 export default BioPage;

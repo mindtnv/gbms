@@ -9,7 +9,7 @@ services:
     image: registry.dev.zldk.su/gbms-site
     networks:
       - traefik-public
-    
+
     deploy:
       restart_policy:
         condition: on-failure
