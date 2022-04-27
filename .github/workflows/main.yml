@@ -20,13 +20,15 @@ jobs:
             **${{ github.repository }}**
             **${{ github.event.commits[0].message }}**
             Start building...
-            
+          sticker: "CAACAgIAAxkBAAEEkjViaP9LT3SxvmjFZSFQOWRavJaPPwAC8gYAAkb7rASw5ylYz5DqKSQE"
+
       - name: Pushed Notification Sticker
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          sticker: CAACAgIAAxkBAAEEkjViaP9LT3SxvmjFZSFQOWRavJaPPwAC8gYAAkb7rASw5ylYz5DqKSQE
+          sticker: "CAACAgIAAxkBAAEEkjViaP9LT3SxvmjFZSFQOWRavJaPPwAC8gYAAkb7rASw5ylYz5DqKSQE"
+  
   
   
   
