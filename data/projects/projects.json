@@ -5,7 +5,7 @@
       "title": "Личный сайт",
       "href": "/projects/gbms",
       "image": "/gbms-site.jpg",
-      "description": "Личный сайт, для понтов",
+      "description": "Личный сайт, для понтов. Процесс разработки и используемые технологии.",
       "categoryId": 1
     },
     {
@@ -28,6 +28,20 @@
       "title": "AnkiNet",
       "href": "https://gitlab.com/anki-tools/ankinet",
       "description": "Библиотека для взаимодействия с Anki-Connect",
+      "categoryId": 2
+    },
+    {
+      "id": "102",
+      "title": "SmsActivator",
+      "href": "https://github.com/mindtnv/SmsActivator/tree/master",
+      "description": "Библиотека абстракций для приёма смс от смс сервисов. Реализована работа с smshub и консольная утилита.",
+      "categoryId": 2
+    },
+    {
+      "id": "103",
+      "title": "ProtoManager",
+      "href": "https://github.com/mindtnv/ProtoManager/tree/master",
+      "description": "Библиотека для работы с Protonmail с помощью Pupetter и инъекции скриптов.",
       "categoryId": 2
     }
   ]
