@@ -4,7 +4,7 @@ const GoogleAnalytics = () => {
   return (
     <>
       {/* Global Site Tag (gtag.js) - Google Analytics */}
-      <Script
+      <script
         async
         src="https://www.googletagmanager.com/gtag/js?id=G-PC0ZTQHQ0S"
       />
@@ -24,5 +24,5 @@ const GoogleAnalytics = () => {
   );
 };
 
-// @ts-ignore
 export default GoogleAnalytics;
+// @ts-ignore
