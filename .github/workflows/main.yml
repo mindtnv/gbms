@@ -76,7 +76,6 @@ jobs:
           ssh_public_key: ${{ secrets.DOCKER_SSH_PUBLIC_KEY }}
           args: stack deploy --compose-file docker-compose.yml gbms-site
 
-
 #  deploy-notify:
 #    runs-on: ubuntu-latest
 #    needs: deploy
