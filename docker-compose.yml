@@ -6,7 +6,7 @@ networks:
 
 services:
   gbms-site:
-    image: registry.dev.zldk.su/gbms-site
+    image: registry.dev.gbms.site/gbms-site
     networks:
       - traefik-public
 
