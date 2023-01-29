@@ -25,6 +25,13 @@
       "categoryId": 1
     },
     {
+      "id": "105",
+      "title": "GBMS Telegram Bot Framework",
+      "href": "https://github.com/mindtnv/GBMSTelegramBotFramework",
+      "description": "Небольшой фреймворк для создания телеграм ботов",
+      "categoryId": 2
+    },
+    {
       "id": "100",
       "title": "AnkiTools",
       "href": "https://gitlab.com/anki-tools/ankitools",
