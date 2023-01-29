@@ -6,7 +6,7 @@ networks:
 
 services:
   gbms-site:
-    image: registry.dev.gbms.site/gbms-site
+    image: registry.dev.gbms.site/gbms-site:latest
     networks:
       - traefik-public
 
