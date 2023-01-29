@@ -17,7 +17,6 @@ const AnimationLayout = ({ route, children }: AnimationLayoutProps) => {
   return (
     <AnimatePresence
       initial
-      exitBeforeEnter
       onExitComplete={() => {
         window.scrollTo(0, 0);
       }}

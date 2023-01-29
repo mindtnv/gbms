@@ -21,7 +21,8 @@ const ResourceLink = ({
   ...props
 }: ResourceLinkProps) => {
   return (
-    <Link href={href.toString()} passHref {...props}>
+    // @ts-ignore
+    <Link legacyBehavior href={href.toString()} passHref {...props}>
       <Button
         as="a"
         target="_blank"

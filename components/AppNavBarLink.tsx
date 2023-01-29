@@ -1,6 +1,6 @@
 import { ChakraProps, Link } from "@chakra-ui/react";
 import NextLink from "next/link";
-import { ReactElement } from "react";
+import React, { ReactElement } from "react";
 
 export type AppNavBarLinkProps = {
   href: string;
@@ -15,11 +15,12 @@ const AppNavBarLink = ({
   ...props
 }: AppNavBarLinkProps) => {
   return (
-    <NextLink href={href ?? ""} passHref scroll={false} {...props}>
-      <Link target={target} as="a" {...props}>
-        {children}
-      </Link>
-    </NextLink>
+    // @ts-ignore
+      <NextLink href={href ?? ""} legacyBehavior passHref scroll={false} {...props}>
+        <Link  target={target} as="a" {...props}>
+          {children}
+        </Link>
+      </NextLink>
   );
 };
 

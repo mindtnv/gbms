@@ -14,7 +14,6 @@ import Link from "next/link";
 import ResourceLink from "../components/ResourceLink";
 import { NextPage } from "next";
 import PageHeader from "../components/PageHeader";
-import Head from "next/head";
 import { NextSeo } from "next-seo";
 
 const LinkPage: NextPage = () => {
@@ -55,6 +54,7 @@ const LinkPage: NextPage = () => {
               </ResourceLink>
 
               <Link
+                legacyBehavior
                 href="https://steamcommunity.com/id/godblessmysoul1/"
                 passHref
               >

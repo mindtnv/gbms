@@ -22,7 +22,7 @@ const AppNavBar = () => {
       w="100%"
       px={3}
       py={5}
-      bg={useColorModeValue("#ffffff60", "#20202080")}
+      bg={"#ffffff60"}
       css={{ backdropFilter: "blur(8px)" }}
       zIndex={10}
     >

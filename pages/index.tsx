@@ -33,7 +33,7 @@ const Home: NextPage<HomePageProps> = ({ tasks, skills }: HomePageProps) => {
         title="gbms | Главная"
         description="Я gbms. Люблю решать проблемы кодом и автоматизировать рутинные задачи. Список моих проектов и целей."
       />
-
+      
       <VStack spacing={12} divider={<StackDivider />} width="100%">
         <PageHeader duration={1}>
           <Logo />
@@ -46,13 +46,13 @@ const Home: NextPage<HomePageProps> = ({ tasks, skills }: HomePageProps) => {
             </Text>
           </Box>
         </PageHeader>
-
+      
         <AppBlock delay={0.05}>
           <Heading as="h3" mb={4}>
             О себе
           </Heading>
           <Text>
-            19 лет, живу в Твери. Люблю решать проблемы кодом и автоматизировать
+            20 лет, живу в Твери. Люблю решать проблемы кодом и автоматизировать
             рутинные задачи. Скромный, ответственный, самоорганизованный,
             коммуникабельный, стрессоустойчивый, конкурентоспособный,
             конструктивный, разносторонний, усидчивый, умный, креативный,
@@ -62,7 +62,7 @@ const Home: NextPage<HomePageProps> = ({ tasks, skills }: HomePageProps) => {
             </AppNavBarLink>
           </Text>
         </AppBlock>
-
+      
         <Flex direction={["column", "row"]} justify="space-between" w="100%">
           <AppBlock delay={0.2} minW={["100%", 325]} width="auto">
             <SkillsList skills={skills} />
@@ -72,7 +72,7 @@ const Home: NextPage<HomePageProps> = ({ tasks, skills }: HomePageProps) => {
             <TasksList tasks={tasks} />
           </AppBlock>
         </Flex>
-
+      
         <AppBlock delay={0.5}>
           <Box mb={4}>
             <Heading as="h3" mb={4}>
@@ -80,13 +80,13 @@ const Home: NextPage<HomePageProps> = ({ tasks, skills }: HomePageProps) => {
             </Heading>
             <Text>Полный список всех проектов с моим участием</Text>
           </Box>
-          <Link href="/projects" passHref scroll={false}>
+          <Link legacyBehavior href="/projects" passHref scroll={false}>
             <Button as="a" colorScheme="purple">
               Моё портфолио
             </Button>
           </Link>
         </AppBlock>
-
+      
         <AppBlock delay={0.5}>
           <Box mb={4}>
             <Heading as="h3" mb={4}>
@@ -94,7 +94,7 @@ const Home: NextPage<HomePageProps> = ({ tasks, skills }: HomePageProps) => {
             </Heading>
             <Text>Как со мной связаться. Где меня найти.</Text>
           </Box>
-          <Link href="/links" passHref scroll={false}>
+          <Link legacyBehavior href="/links" passHref scroll={false}>
             <Button as="a">Полный список</Button>
           </Link>
         </AppBlock>

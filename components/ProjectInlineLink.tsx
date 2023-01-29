@@ -14,7 +14,7 @@ const ProjectInlineLink = ({
 }: ProjectInlineLinkProps) => {
   return (
     <Box w="100%" {...props}>
-      <Link href={project.href} scroll={false} passHref>
+      <Link legacyBehavior href={project.href} scroll={false} passHref>
         <LinkBox cursor="pointer" as="a" target={target}>
           <Box>
             <Heading mb={1} as="h4" size="lg">

@@ -27,7 +27,7 @@ const ProjectBlockLink = ({
       {...props}
       position="relative"
     >
-      <Link href={project.href} scroll={false} passHref>
+      <Link legacyBehavior href={project.href} scroll={false} passHref>
         <LinkBox
           cursor="pointer"
           as="a"
